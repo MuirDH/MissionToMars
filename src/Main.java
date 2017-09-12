@@ -19,6 +19,7 @@ public class Main {
         // Create a Simulation Object
         Simulation simulation = new Simulation();
 
+        // scan Phase One Text
         Scanner phaseOne = null;
         try {
             phaseOne = new Scanner(new File("phase1.txt"));
@@ -26,14 +27,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        Scanner phaseTwo = null;
-        try {
-            phaseTwo = new Scanner(new File("phase2.txt"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-        // load item lists for Phase1 and Phase 2
+        // load item list for Phase One
         try {
             simulation.loadItems(phaseOne);
         } catch (FileNotFoundException e) {
@@ -48,6 +42,15 @@ public class Main {
         System.out.println("U2 Phase One Launch");
         simulation.loadU2Fleet(phaseOne);
 
+       // Scan Phase Two text
+         Scanner phaseTwo = null;
+        try {
+            phaseTwo = new Scanner(new File("phase2.txt"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        // load item list for Phase Two
         try {
             simulation.loadItems(phaseTwo);
         } catch (FileNotFoundException e) {

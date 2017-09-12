@@ -43,7 +43,7 @@ public class Rocket implements SpaceShip {
     public boolean canCarry(Item item) {
         // if currentWeight < cargoLimit for the rocket, then return true else return false
         int testWeight = currentWeight + item.weight;
-        return testWeight < cargoLimit;
+        return testWeight <= cargoLimit;
 
     }
 

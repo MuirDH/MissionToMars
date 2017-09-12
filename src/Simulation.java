@@ -119,6 +119,7 @@ public class Simulation {
         // go through the array of rockets
         for (Rocket aRocket: rockets) {
             budget = budget + aRocket.rocketCost;
+            rocketNumber++;
             System.out.println("Current budget is: " + budget);
             // if the rocket crashes when it launches or when it lands, send rocket again
             if (!aRocket.launch()){
@@ -133,7 +134,6 @@ public class Simulation {
                 aRocket.launch();
             }
 
-            rocketNumber++;
             System.out.println("Rocket " + rocketNumber + " arrived safely");
 
         }
